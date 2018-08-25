@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour {
             health = value;
             if (health <= 0)
             {
-                //Die
+                Destroy(gameObject); 
             }
         }
     }
@@ -30,9 +30,9 @@ public class Enemy : MonoBehaviour {
 
     private void Awake()
     {
+        Health = maxHealth; 
         target = Waypoints.points[pointIndex];
         transform.LookAt(target);
-        
     }
 
     private void Update()

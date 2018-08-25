@@ -9,7 +9,7 @@ public class SlowingTower : Tower {
     [SerializeField] float cooldown;
     [SerializeField] float radius;
     float timer = 0;
-    [SerializeField] LayerMask whatToHit;
+    [SerializeField] LayerMask WhatToHit;
 
     private void Update()
     {
