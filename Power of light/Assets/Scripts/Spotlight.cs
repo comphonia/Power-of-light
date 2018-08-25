@@ -9,10 +9,13 @@ public class Spotlight : Tower {
     [SerializeField] float radius;
     [SerializeField] float damage;
     [SerializeField] float cooldown;
+    public bool isPowered;
+    [SerializeField] GameObject pointLight;
     float timer = 0;
 
     private void Awake()
     {
+        isPowered = false;
         range = Range;
         whatToHit = WhatToHit; 
     }
@@ -24,14 +27,26 @@ public class Spotlight : Tower {
 
     private void Update()
     {
-        if (target == null) return;
-        transform.LookAt(target);
-        if (timer <= 0)
+        pointLight.SetActive(isPowered);
+        if (isPowered)
         {
-            AttackEnemies();
-            timer = cooldown; 
+            isPowered = false;
+            if (target == null) return;
+            transform.LookAt(target);
+            if (timer <= 0)
+            {
+                AttackEnemies();
+                timer = cooldown;
+            }
+            timer -= Time.deltaTime;
+
         }
-        timer -= Time.deltaTime; 
+    }
+
+    public void Powered()
+    {
+        isPowered = true;
+        Debug.Log(isPowered);
     }
 
     void AttackEnemies ()

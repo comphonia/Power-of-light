@@ -27,6 +27,10 @@ public class Reflect : MonoBehaviour
                 reflect.hitPosition = hit.point;
                 reflect.ReflectBeam();
             }
+            if (hit.collider.CompareTag("Tower"))
+            {
+                hit.collider.gameObject.GetComponent<Spotlight>().Powered();
+            }
             Debug.DrawRay(hitPosition, reflectVect.normalized * hit.distance, Color.white);
         }
         else
