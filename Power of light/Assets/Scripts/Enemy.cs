@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour {
     }
     public float maxHealth;
     public float defaultSpeed;
+    public float speed; 
 
     Vector3 direction; 
     Transform target;
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour {
     private void Update()
     {
         direction = target.transform.position - transform.position;
-        transform.Translate(direction.normalized * defaultSpeed * Time.deltaTime, Space.World); 
+        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World); 
         if (Vector3.Distance(target.transform.position, transform.position) <= 0.2f) GetNewWaypoint(); 
     }
 
@@ -56,5 +57,5 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-
+    
 }
