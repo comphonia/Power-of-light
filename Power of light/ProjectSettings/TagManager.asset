@@ -35,9 +35,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - sectext
+  - maintext
+  - bg
   m_SortingLayers:
   - name: Default
     uniqueID: 0

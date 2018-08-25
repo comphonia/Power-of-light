@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    private float health; 
+    [SerializeField] float health; 
     public float Health
     {
         get
@@ -16,13 +16,15 @@ public class Enemy : MonoBehaviour {
             health = value;
             if (health <= 0)
             {
-                //Die
+                Destroy(gameObject);
+                GameMaster.instance.IncreaseGold(lootAmount); 
             }
         }
     }
-    public float maxHealth;
+    [SerializeField] float maxHealth;
     public float defaultSpeed;
-    public float speed; 
+    public float speed;
+    [SerializeField] float lootAmount; 
 
     Vector3 direction; 
     Transform target;
@@ -30,9 +32,9 @@ public class Enemy : MonoBehaviour {
 
     private void Awake()
     {
+        Health = maxHealth; 
         target = Waypoints.points[pointIndex];
         transform.LookAt(target);
-        
     }
 
     private void Update()
