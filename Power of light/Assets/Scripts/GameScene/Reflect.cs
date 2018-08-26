@@ -49,6 +49,7 @@ public class Reflect : MonoBehaviour
         lightBeam.endColor = new Color(colorValue, colorValue, colorValue);
         if (intensity <= 0)
         {
+            isReflecting = false;
             return;
         }
         if (Physics.Raycast(hitPosition, reflectVect, out hit, maxDistance))
