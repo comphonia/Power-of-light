@@ -218,6 +218,33 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114642280249898088, guid: a6baf6acc4f79fa409e710a24601e704,
+        type: 2}
+      propertyPath: subWaves.Array.data[1].enemy
+      value: 
+      objectReference: {fileID: 1999982421953906, guid: a06f9956bad39ab43bdf3b5f864895ac,
+        type: 2}
+    - target: {fileID: 114642280249898088, guid: a6baf6acc4f79fa409e710a24601e704,
+        type: 2}
+      propertyPath: subWaves.Array.data[0].enemy
+      value: 
+      objectReference: {fileID: 1854345680704770, guid: f06a2d6be4817cc49a587e5a0da7cdc6,
+        type: 2}
+    - target: {fileID: 114642280249898088, guid: a6baf6acc4f79fa409e710a24601e704,
+        type: 2}
+      propertyPath: subWaves.Array.data[1].spawnDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642280249898088, guid: a6baf6acc4f79fa409e710a24601e704,
+        type: 2}
+      propertyPath: subWaves.Array.data[1].delayToNextSubWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642280249898088, guid: a6baf6acc4f79fa409e710a24601e704,
+        type: 2}
+      propertyPath: subWaves.Array.data[1].numberOfEnemy
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6baf6acc4f79fa409e710a24601e704, type: 2}
   m_IsPrefabAsset: 0

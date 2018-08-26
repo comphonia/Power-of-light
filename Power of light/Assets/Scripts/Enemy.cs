@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    [SerializeField] float health; 
+    float health; 
     public float Health
     {
         get
@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
     }
     [SerializeField] float maxHealth;
     public float defaultSpeed;
-    public float speed;
+    [HideInInspector] public float speed;
     [SerializeField] float lootAmount; 
 
     Vector3 direction; 
@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour {
 
     private void Awake()
     {
-        Health = maxHealth; 
+        Health = maxHealth;
+        speed = defaultSpeed; 
         target = Waypoints.points[pointIndex];
         transform.LookAt(target);
     }
