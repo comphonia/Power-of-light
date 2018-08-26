@@ -8,6 +8,10 @@ public class LightBeamGenerator : MonoBehaviour
 
     public float maxDistance;
 
+    public int maxBounces;
+
+    public static int beamIntensity;
+
     public bool isPowered;
 
     public bool drawRay;
@@ -22,6 +26,7 @@ public class LightBeamGenerator : MonoBehaviour
 
     private void Awake()
     {
+        beamIntensity = maxBounces;
         lightBeam.enabled = false;
     }
 
@@ -39,6 +44,7 @@ public class LightBeamGenerator : MonoBehaviour
                     Vector3 reflectVect = Vector3.Reflect(incomingVect, hit.normal);
                     reflect = hit.collider.gameObject.GetComponent<Reflect>();
                     reflect.isReflecting = true;
+                    reflect.beamIntensity = beamIntensity;
                     reflect.reflectVect = reflectVect;
                     reflect.hitPosition = hit.point;
                     //reflect.ReflectBeam();

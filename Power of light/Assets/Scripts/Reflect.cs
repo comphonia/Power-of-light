@@ -12,11 +12,15 @@ public class Reflect : MonoBehaviour
 
     public float maxDistance;
 
-    public LineRenderer lightBeam;
+    private LineRenderer lightBeam;
+
+    public GameObject spotLight;
 
     public Material reflectMat;
 
     public Material fadeMat;
+
+    public int beamIntensity;
 
     RaycastHit hit;
 
@@ -30,14 +34,23 @@ public class Reflect : MonoBehaviour
     private void Update()
     {
         lightBeam.enabled = isReflecting;
+        spotLight.SetActive(isReflecting);
         if (isReflecting)
         {
-            ReflectBeam();
+            ReflectBeam(beamIntensity);
         }
     }
 
-    public void ReflectBeam()
+    public void ReflectBeam(int intensity)
     {
+        intensity -= 1;
+        float colorValue = Mathf.InverseLerp(0, LightBeamGenerator.beamIntensity, intensity);
+        lightBeam.startColor = new Color(colorValue, colorValue, colorValue);
+        lightBeam.endColor = new Color(colorValue, colorValue, colorValue);
+        if (intensity <= 0)
+        {
+            return;
+        }
         if (Physics.Raycast(hitPosition, reflectVect, out hit, maxDistance))
         {
             if (hit.collider.CompareTag("Mirror"))
@@ -46,9 +59,9 @@ public class Reflect : MonoBehaviour
                 Vector3 reflectVect = Vector3.Reflect(incomingVect, hit.normal);
                 reflect = hit.collider.gameObject.GetComponent<Reflect>();
                 reflect.isReflecting = true;
+                reflect.beamIntensity = intensity;
                 reflect.reflectVect = reflectVect;
                 reflect.hitPosition = hit.point;
-                //reflect.ReflectBeam();
             }
             if (hit.collider.CompareTag("Tower"))
             {

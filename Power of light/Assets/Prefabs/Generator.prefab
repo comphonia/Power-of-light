@@ -348,6 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOrigin: {fileID: 4630589884629984}
   maxDistance: 30
+  maxBounces: 5
   isPowered: 1
   drawRay: 0
   lightBeam: {fileID: 120028406482438694}
