@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Reflect : MonoBehaviour
 {
+    public bool isReflecting;
+
     public Vector3 reflectVect;
 
     public Vector3 hitPosition;
@@ -25,14 +27,17 @@ public class Reflect : MonoBehaviour
         lightBeam = GetComponent<LineRenderer>();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        lightBeam.enabled = false;
+        lightBeam.enabled = isReflecting;
+        if (isReflecting)
+        {
+            ReflectBeam();
+        }
     }
 
     public void ReflectBeam()
     {
-        lightBeam.enabled = true;
         if (Physics.Raycast(hitPosition, reflectVect, out hit, maxDistance))
         {
             if (hit.collider.CompareTag("Mirror"))
@@ -40,9 +45,10 @@ public class Reflect : MonoBehaviour
                 Vector3 incomingVect = hit.point - hitPosition;
                 Vector3 reflectVect = Vector3.Reflect(incomingVect, hit.normal);
                 reflect = hit.collider.gameObject.GetComponent<Reflect>();
+                reflect.isReflecting = true;
                 reflect.reflectVect = reflectVect;
                 reflect.hitPosition = hit.point;
-                reflect.ReflectBeam();
+                //reflect.ReflectBeam();
             }
             if (hit.collider.CompareTag("Tower"))
             {
@@ -58,6 +64,7 @@ public class Reflect : MonoBehaviour
             lightBeam.SetPosition(0, hitPosition);
             lightBeam.SetPosition(1, hitPosition + (reflectVect.normalized * maxDistance));
         }
+        isReflecting = false;
     } 
 }
 

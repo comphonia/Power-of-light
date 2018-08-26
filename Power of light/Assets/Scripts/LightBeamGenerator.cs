@@ -38,9 +38,10 @@ public class LightBeamGenerator : MonoBehaviour
                     Vector3 incomingVect = hit.point - rayOrigin.position;
                     Vector3 reflectVect = Vector3.Reflect(incomingVect, hit.normal);
                     reflect = hit.collider.gameObject.GetComponent<Reflect>();
+                    reflect.isReflecting = true;
                     reflect.reflectVect = reflectVect;
                     reflect.hitPosition = hit.point;
-                    reflect.ReflectBeam();
+                    //reflect.ReflectBeam();
                 }
                 if (hit.collider.CompareTag("Tower"))
                 {
