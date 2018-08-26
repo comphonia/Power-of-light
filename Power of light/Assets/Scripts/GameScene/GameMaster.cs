@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro; 
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour {
@@ -32,30 +31,35 @@ public class GameMaster : MonoBehaviour {
         set
         {
             gold = value;
-            GoldText.UpdateText(gold); 
+            UpdateGoldUI(); 
         }
     }
 
     public static GameMaster instance;
+    [SerializeField] TextMeshProUGUI goldText;
+    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI lastingEnemiesText;
 
     private void Awake()
     {
-        Gold = 0; 
+        Gold = 0;
+        Health = maxHealth;
 
         if (instance == null) instance = this;
         else this.enabled = false;
-
-        health = maxHealth; 
     }
 
     private void UpdateHealthUI()
     {
-       
+        healthText.text = string.Format(health.ToString()); 
     } 
-
     private void UpdateGoldUI()
     {
-
+        goldText.text = string.Format(gold.ToString()); 
+    }
+    public void UpdateLastingEnemiesUI(int number)
+    {
+        lastingEnemiesText.text = string.Format(number.ToString()); 
     }
 
     void DamageCity(float damage)
