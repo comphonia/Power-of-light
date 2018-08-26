@@ -15,9 +15,26 @@ public class GameMaster : MonoBehaviour {
         {
             health = value;
             UpdateHealthUI(); 
+            if (health <= 0)
+            {
+                health = 0;
+                BattleLost(); 
+            }
         }
     }
-    float gold; 
+    int gold; 
+    int Gold
+    {
+        get
+        {
+            return gold;
+        }
+        set
+        {
+            gold = value;
+            UpdateGoldUI();
+        }
+    }
 
     public static GameMaster instance;
 
@@ -35,6 +52,11 @@ public class GameMaster : MonoBehaviour {
     private void UpdateHealthUI()
     {
        
+    } 
+
+    private void UpdateGoldUI()
+    {
+
     }
 
     void DamageCity(float damage)
@@ -42,8 +64,19 @@ public class GameMaster : MonoBehaviour {
         Health -= damage;
     }
 
-    public void IncreaseGold(float amount)
+    public void IncreaseGold(int amount)
     {
-        gold += amount; 
+        Gold += amount; 
+    }
+
+    public void WaveEnded()
+    {
+        Health = maxHealth;
+        PlayerPrefs.SetInt("gold", gold); 
+    }
+
+    public void BattleLost()
+    {
+        //game over
     }
 }

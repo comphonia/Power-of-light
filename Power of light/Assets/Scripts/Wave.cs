@@ -14,18 +14,30 @@ public class Wave : MonoBehaviour {
     }
 
     [SerializeField] List<SubWave> subWaves;
-    [SerializeField] float delayWhenTheWaveStarts; 
-
-    /*int waveNumber = 1;
-    [SerializeField] GameObject[] enemyTypes;
+    [SerializeField] float delayWhenTheWaveStarts;
+    int lastingEnemies;
+    public int LastingEnemies
+    {
+        get
+        {
+            return lastingEnemies;
+        }
+        set
+        {
+            lastingEnemies = value;
+            UpdateLastingEnemiesUI();
+            if (lastingEnemies == 0) WaveEnded(); 
+        }
+    }
+    
+    /*[SerializeField] GameObject[] enemyTypes;
     [SerializeField] float[] probs;
     [SerializeField] float spawnDelay;
     [SerializeField] float numberOfEnemy; */
     
 
-    private void Awake()
+    private void OnEnable()
     {
-        //if (PlayerPrefs.HasKey("waveNumber")) waveNumber = PlayerPrefs.GetInt("waveNumber");
         StartCoroutine(Spawning()); 
     }
 
@@ -48,6 +60,18 @@ public class Wave : MonoBehaviour {
             }
             yield return new WaitForSeconds(sw.delayToNextSubWave); 
         }
+    }
+
+    void WaveEnded()
+    {
+        Debug.Log("wave ended");
+        GameMaster.instance.WaveEnded();
+        WavesSpawner.WaveEnded();
+    }
+
+    void UpdateLastingEnemiesUI()
+    {
+
     }
 
     /*int ChooseEnemyType()
