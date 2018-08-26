@@ -46,7 +46,6 @@ public class Spotlight : Tower {
     public void Powered()
     {
         isPowered = true;
-        Debug.Log(isPowered);
     }
 
     void AttackEnemies ()

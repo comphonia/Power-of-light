@@ -11,10 +11,23 @@ public class LightBeamGenerator : MonoBehaviour
     public bool isPowered;
 
     public bool drawRay;
+
+    public LineRenderer lightBeam;
+
+    public Material reflectMat;
+
+    public Material fadeMat;
+
     private Reflect reflect;
+
+    private void Awake()
+    {
+        lightBeam.enabled = false;
+    }
 
     void Update ()
     {
+        lightBeam.enabled = isPowered;
         if (isPowered)
         {
             RaycastHit hit;
@@ -33,18 +46,15 @@ public class LightBeamGenerator : MonoBehaviour
                 {
                     hit.collider.gameObject.GetComponent<Spotlight>().Powered();
                 }
-                if (drawRay)
-                {
-                    Debug.DrawRay(rayOrigin.position, rayOrigin.TransformDirection(Vector3.forward) * hit.distance, Color.white);
-                }
-
+                lightBeam.material = reflectMat;
+                lightBeam.SetPosition(0, rayOrigin.position);
+                lightBeam.SetPosition(1, hit.point);
             }
             else
             {
-                if (drawRay)
-                {
-                    Debug.DrawRay(rayOrigin.position, rayOrigin.TransformDirection(Vector3.forward) * maxDistance, Color.white);
-                }
+                lightBeam.material = fadeMat;
+                lightBeam.SetPosition(0, rayOrigin.position);
+                lightBeam.SetPosition(1, rayOrigin.TransformPoint(Vector3.forward * maxDistance));
             }
         }
     }

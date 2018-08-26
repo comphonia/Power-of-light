@@ -8,15 +8,32 @@ public class Reflect : MonoBehaviour
 
     public Vector3 hitPosition;
 
-    public float maxLength;
+    public float maxDistance;
+
+    public LineRenderer lightBeam;
+
+    public Material reflectMat;
+
+    public Material fadeMat;
 
     RaycastHit hit;
 
     private Reflect reflect;
 
+    private void Awake()
+    {
+        lightBeam = GetComponent<LineRenderer>();
+    }
+
+    private void LateUpdate()
+    {
+        lightBeam.enabled = false;
+    }
+
     public void ReflectBeam()
     {
-        if (Physics.Raycast(hitPosition, reflectVect, out hit, maxLength))
+        lightBeam.enabled = true;
+        if (Physics.Raycast(hitPosition, reflectVect, out hit, maxDistance))
         {
             if (hit.collider.CompareTag("Mirror"))
             {
@@ -31,13 +48,16 @@ public class Reflect : MonoBehaviour
             {
                 hit.collider.gameObject.GetComponent<Spotlight>().Powered();
             }
-            Debug.DrawRay(hitPosition, reflectVect.normalized * hit.distance, Color.white);
+            lightBeam.material = reflectMat;
+            lightBeam.SetPosition(0, hitPosition);
+            lightBeam.SetPosition(1, hit.point);
         }
         else
         {
-            Debug.DrawRay(hitPosition, reflectVect * maxLength, Color.white);
-        } 
-        
-    }
+            lightBeam.material = fadeMat;
+            lightBeam.SetPosition(0, hitPosition);
+            lightBeam.SetPosition(1, hitPosition + (reflectVect.normalized * maxDistance));
+        }
+    } 
 }
 
