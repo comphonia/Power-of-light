@@ -144,9 +144,9 @@ MonoBehaviour:
   slowDuration: 0
   cooldown: 1
   radius: 3
-  whatToHit:
+  WhatToHit:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!114 &114911796357310856
 MonoBehaviour:
   m_ObjectHideFlags: 1

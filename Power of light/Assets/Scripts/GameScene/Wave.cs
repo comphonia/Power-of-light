@@ -8,7 +8,7 @@ public class Wave : MonoBehaviour {
     class SubWave
     {
         public GameObject enemy;
-        public float numberOfEnemy;
+        public int numberOfEnemy;
         public float spawnDelay;
         public float delayToNextSubWave; 
     }
@@ -25,7 +25,7 @@ public class Wave : MonoBehaviour {
         set
         {
             lastingEnemies = value;
-            UpdateLastingEnemiesUI();
+            LastingEnemiesText.UpdateText(lastingEnemies); 
             if (lastingEnemies == 0) WaveEnded(); 
         }
     }
@@ -38,7 +38,12 @@ public class Wave : MonoBehaviour {
 
     private void OnEnable()
     {
-        StartCoroutine(Spawning()); 
+        StartCoroutine(Spawning());
+        lastingEnemies = 0; 
+        foreach(SubWave sw in subWaves)
+        {
+            LastingEnemies += sw.numberOfEnemy;
+        }
     }
 
     IEnumerator Spawning()
@@ -67,11 +72,7 @@ public class Wave : MonoBehaviour {
         Debug.Log("wave ended");
         GameMaster.instance.WaveEnded();
         WavesSpawner.WaveEnded();
-    }
-
-    void UpdateLastingEnemiesUI()
-    {
-
+        Destroy(gameObject); 
     }
 
     /*int ChooseEnemyType()

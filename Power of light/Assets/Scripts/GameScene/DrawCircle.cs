@@ -24,7 +24,7 @@ public class DrawCircle : MonoBehaviour
     void CreatePoints()
     {
         float x;
-        float y;
+        //float y;
         float z;
 
         float angle = 20f;

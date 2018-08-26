@@ -9,55 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1352861247578066}
+  m_RootGameObject: {fileID: 1568717020011942}
   m_IsPrefabAsset: 1
---- !u!1 &1352861247578066
+--- !u!1 &1568717020011942
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4413056153832224}
-  - component: {fileID: 114642280249898088}
+  - component: {fileID: 4228669180270562}
+  - component: {fileID: 114662133547632204}
   m_Layer: 0
-  m_Name: Wave 1
+<<<<<<< HEAD:Power of light/Assets/Prefabs/Waves/Wave 2.prefab
+  m_Name: Wave 2
+=======
+  m_Name: GameMaster
+>>>>>>> c5f0d89a01f7a7173bd4e42b267348006da4ea36:Power of light/Assets/Prefabs/GameMaster.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4413056153832224
+--- !u!4 &4228669180270562
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352861247578066}
+  m_GameObject: {fileID: 1568717020011942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.23, y: 0, z: 3.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114642280249898088
+--- !u!114 &114662133547632204
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352861247578066}
+  m_GameObject: {fileID: 1568717020011942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4558897d9e7a5a843b215a4bfeee2360, type: 3}
+  m_Script: {fileID: 11500000, guid: a1cc6dc4427ed624885b045918bd245d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subWaves:
-  - enemy: {fileID: 1854345680704770, guid: f06a2d6be4817cc49a587e5a0da7cdc6, type: 2}
-    numberOfEnemy: 3
-    spawnDelay: 1
-    delayToNextSubWave: 3
-  - enemy: {fileID: 1999982421953906, guid: a06f9956bad39ab43bdf3b5f864895ac, type: 2}
-    numberOfEnemy: 3
-    spawnDelay: 0.2
-    delayToNextSubWave: 0
-  delayWhenTheWaveStarts: 2
+  maxHealth: 40

@@ -32,7 +32,7 @@ public class GameMaster : MonoBehaviour {
         set
         {
             gold = value;
-            UpdateGoldUI();
+            GoldText.UpdateText(gold); 
         }
     }
 
@@ -40,8 +40,7 @@ public class GameMaster : MonoBehaviour {
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("gold")) gold = PlayerPrefs.GetInt("gold");
-        else gold = 0; 
+        Gold = 0; 
 
         if (instance == null) instance = this;
         else this.enabled = false;
@@ -72,7 +71,6 @@ public class GameMaster : MonoBehaviour {
     public void WaveEnded()
     {
         Health = maxHealth;
-        PlayerPrefs.SetInt("gold", gold); 
     }
 
     public void BattleLost()

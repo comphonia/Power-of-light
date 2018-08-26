@@ -11,6 +11,7 @@ public class Spotlight : Tower {
     [SerializeField] float cooldown;
     public bool isPowered;
     [SerializeField] GameObject pointLight;
+    [SerializeField] Transform topOfTheTower;
     float timer = 0;
 
     private void Awake()
@@ -32,7 +33,7 @@ public class Spotlight : Tower {
         {
             isPowered = false;
             if (target == null) return;
-            transform.LookAt(target);
+            topOfTheTower.LookAt(target);
             if (timer <= 0)
             {
                 AttackEnemies();
