@@ -6,7 +6,7 @@ public abstract class Tower : MonoBehaviour {
 
     protected float range;
     protected LayerMask whatToHit;
-    protected Transform target; 
+    protected Transform target;
 
     void FindTarget()
     {
