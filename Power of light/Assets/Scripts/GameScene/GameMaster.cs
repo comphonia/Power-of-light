@@ -32,7 +32,7 @@ public class GameMaster : MonoBehaviour {
         set
         {
             gold = value;
-            GoldText.UpdateText(gold); 
+            UpdateGoldUI(); 
         }
     }
 
