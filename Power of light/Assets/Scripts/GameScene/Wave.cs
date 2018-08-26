@@ -25,7 +25,9 @@ public class Wave : MonoBehaviour {
         set
         {
             lastingEnemies = value;
-            LastingEnemiesText.UpdateText(lastingEnemies); 
+            if (GameMaster.instance != null)
+                GameMaster.instance.UpdateLastingEnemiesUI(lastingEnemies);
+            else GameObject.Find("GameMaster").GetComponent<GameMaster>().UpdateLastingEnemiesUI(lastingEnemies);
             if (lastingEnemies == 0) WaveEnded(); 
         }
     }

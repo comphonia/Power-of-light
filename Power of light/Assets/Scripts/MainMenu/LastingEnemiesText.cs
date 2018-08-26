@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class LastingEnemiesText : MonoBehaviour {
 
-    static TextMeshProUGUI text;
+    TextMeshProUGUI text;
+    public static LastingEnemiesText instance; 
 
     private void Awake()
     {
+        if (instance == null) instance = this;
+        else this.enabled = false; 
         text = GetComponent<TextMeshProUGUI>(); 
     }
 
-    public static void UpdateText (int value)
+    public void UpdateText (int value)
     {
         text.text = string.Format(value.ToString());
     }

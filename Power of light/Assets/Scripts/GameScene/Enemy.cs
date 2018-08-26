@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour {
         if (pointIndex == Waypoints.points.Length - 1)
         {
             Destroy(gameObject);
+            GameMaster.instance.Health--; 
         }
         else
         {
