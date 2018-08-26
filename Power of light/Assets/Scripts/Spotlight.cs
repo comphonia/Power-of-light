@@ -39,7 +39,6 @@ public class Spotlight : Tower {
                 timer = cooldown;
             }
             timer -= Time.deltaTime;
-
         }
     }
 
