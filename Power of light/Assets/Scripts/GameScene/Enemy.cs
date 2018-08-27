@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour {
             if (health <= 0)
             {
                 Destroy(gameObject);
-                GameMaster.instance.IncreaseGold(lootAmount); 
+                GameMaster.instance.Gold += lootAmount; 
             }
         }
     }

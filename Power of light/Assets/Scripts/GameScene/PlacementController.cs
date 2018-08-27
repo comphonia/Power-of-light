@@ -15,8 +15,9 @@ public class PlacementController : MonoBehaviour
     {
         if (currentPlaceableObject != null)
         {
+            if (Input.GetKeyDown(KeyCode.Escape)) Destroy(currentPlaceableObject); 
             MoveCurrentObjectToMouse();
-            //RotateFromMouseWheel();
+            RotateFromMouseWheel();
             ReleaseIfClicked();
         }
     }
@@ -59,7 +60,7 @@ public class PlacementController : MonoBehaviour
 
     private void RotateFromMouseWheel()
     {
-        Debug.Log(Input.mouseScrollDelta);
+        //Debug.Log(Input.mouseScrollDelta);
         mouseWheelRotation += Input.mouseScrollDelta.y;
         currentPlaceableObject.transform.Rotate(Vector3.up, mouseWheelRotation * 10f);
     }

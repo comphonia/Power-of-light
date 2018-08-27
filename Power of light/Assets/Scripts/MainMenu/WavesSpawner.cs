@@ -4,9 +4,25 @@ public class WavesSpawner : MonoBehaviour {
 
     static GameObject[] waves;
     static int waveNumber = 0;
+    bool waveInProgress = false;
+    bool WaveInProgress
+    {
+        get
+        {
+            return waveInProgress;
+        }
+        set
+        {
+            waveInProgress = value;
+            PlayWaveButton.instance.SetButton(waveInProgress); 
+        }
+    }
+    public static WavesSpawner instance;
 
     private void Awake()
-    { 
+    {
+        if (instance == null) instance = this;
+        else this.enabled = false; 
         waves = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -15,8 +31,9 @@ public class WavesSpawner : MonoBehaviour {
         }
     }
 
-    private void Start()
+    public void StartNewWave()
     {
+        WaveInProgress = true; 
         waves[waveNumber].SetActive(true); 
     }
 
@@ -25,9 +42,9 @@ public class WavesSpawner : MonoBehaviour {
         waves[waveNumber].SetActive(true); 
     }
 
-    public static void WaveEnded()
+    public void WaveEnded()
     {
-        //waves[waveNumber].SetActive(false);
+        WaveInProgress = false; 
         waveNumber++; 
     }
 

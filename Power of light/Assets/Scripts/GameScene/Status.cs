@@ -18,6 +18,5 @@ public class Status : MonoBehaviour {
     public static void Damage (Enemy enemy, float damage)
     {
         enemy.Health -= damage;
-        Debug.Log(enemy.Health);
     }
 }

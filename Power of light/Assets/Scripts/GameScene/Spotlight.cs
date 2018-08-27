@@ -13,6 +13,7 @@ public class Spotlight : Tower {
     [SerializeField] GameObject pointLight;
     [SerializeField] Transform topOfTheTower;
     float timer = 0;
+    [SerializeField] bool debug = false; 
 
     private void Awake()
     {
@@ -29,11 +30,12 @@ public class Spotlight : Tower {
     private void Update()
     {
         pointLight.SetActive(isPowered);
-        if (isPowered)
+        if (isPowered || debug)
         {
             isPowered = false;
             if (target == null) return;
-            topOfTheTower.LookAt(target);
+            topOfTheTower.LookAt(target, Vector3.forward);
+            topOfTheTower.rotation = Quaternion.Euler(new Vector3(topOfTheTower.rotation.eulerAngles.x, topOfTheTower.rotation.eulerAngles.y, 0)); 
             if (timer <= 0)
             {
                 AttackEnemies();
@@ -50,11 +52,11 @@ public class Spotlight : Tower {
 
     void AttackEnemies ()
     {
-        Collider[] hits = Physics.OverlapSphere(target.position, radius); 
+        Collider[] hits = Physics.OverlapSphere(target.position, radius, whatToHit);
         foreach (Collider h in hits)
         {
-            Enemy enemy = h.GetComponent<Enemy>();
-            Status.Damage(enemy, damage); 
+            Enemy enemy = h.transform.GetComponentInParent<Enemy>();
+            if (enemy != null) Status.Damage(enemy, damage); 
         }
     }
 

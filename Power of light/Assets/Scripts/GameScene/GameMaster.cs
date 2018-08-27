@@ -22,7 +22,7 @@ public class GameMaster : MonoBehaviour {
         }
     }
     int gold; 
-    int Gold
+    public int Gold
     {
         get
         {
@@ -42,7 +42,7 @@ public class GameMaster : MonoBehaviour {
 
     private void Awake()
     {
-        Gold = 0;
+        Gold = 200;
         Health = maxHealth;
 
         if (instance == null) instance = this;
@@ -65,11 +65,6 @@ public class GameMaster : MonoBehaviour {
     void DamageCity(float damage)
     {
         Health -= damage;
-    }
-
-    public void IncreaseGold(int amount)
-    {
-        Gold += amount; 
     }
 
     public void WaveEnded()

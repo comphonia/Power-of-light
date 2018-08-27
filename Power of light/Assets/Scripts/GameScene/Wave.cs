@@ -73,7 +73,7 @@ public class Wave : MonoBehaviour {
     {
         Debug.Log("wave ended");
         GameMaster.instance.WaveEnded();
-        WavesSpawner.WaveEnded();
+        WavesSpawner.instance.WaveEnded();
         Destroy(gameObject); 
     }
 
