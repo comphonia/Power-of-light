@@ -15,10 +15,13 @@ public class Spotlight : Tower {
     float timer = 0;
     [SerializeField] bool debug = false;
     [SerializeField] AudioSource powerSound;
+    [SerializeField] AudioSource shotSound;
 
     private void Awake()
     {
         isPowered = false;
+        shotSound.Pause();
+        powerSound.Pause();
         range = Range;
         whatToHit = WhatToHit; 
     }
@@ -40,8 +43,13 @@ public class Spotlight : Tower {
             topOfTheTower.rotation = Quaternion.Euler(new Vector3(topOfTheTower.rotation.eulerAngles.x, topOfTheTower.rotation.eulerAngles.y, 0)); 
             if (timer <= 0)
             {
+                shotSound.Pause();
                 AttackEnemies();
                 timer = cooldown;
+            }
+            else
+            {
+                shotSound.UnPause();
             }
             timer -= Time.deltaTime;
         }
@@ -62,7 +70,10 @@ public class Spotlight : Tower {
         foreach (Collider h in hits)
         {
             Enemy enemy = h.transform.GetComponentInParent<Enemy>();
-            if (enemy != null) Status.Damage(enemy, damage); 
+            if (enemy != null)
+            {
+                Status.Damage(enemy, damage);
+            }
         }
     }
 
