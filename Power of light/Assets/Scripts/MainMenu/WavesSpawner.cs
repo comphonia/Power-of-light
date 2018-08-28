@@ -3,7 +3,19 @@
 public class WavesSpawner : MonoBehaviour {
 
     static GameObject[] waves;
-    static int waveNumber = 0;
+    int waveNumber;
+    int WaveNumber
+    {
+        get
+        {
+            return waveNumber;
+        }
+        set
+        {
+            waveNumber = value;
+            GameMaster.instance.UpdateWaveNumberUI(waveNumber); 
+        }
+    }
     bool waveInProgress = false;
     bool WaveInProgress
     {
@@ -29,6 +41,8 @@ public class WavesSpawner : MonoBehaviour {
             waves[i] = transform.GetChild(i).gameObject;
             waves[i].SetActive(false);
         }
+
+        WaveNumber = 0; 
     }
 
     public void StartNewWave()
@@ -44,8 +58,8 @@ public class WavesSpawner : MonoBehaviour {
 
     public void WaveEnded()
     {
-        WaveInProgress = false; 
-        waveNumber++; 
+        WaveInProgress = false;
+        WaveNumber++; 
     }
 
 }

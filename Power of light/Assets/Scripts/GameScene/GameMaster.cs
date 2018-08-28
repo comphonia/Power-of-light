@@ -39,6 +39,7 @@ public class GameMaster : MonoBehaviour {
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI lastingEnemiesText;
+    [SerializeField] TextMeshProUGUI waveNumberText;
 
     private void Awake()
     {
@@ -60,6 +61,10 @@ public class GameMaster : MonoBehaviour {
     public void UpdateLastingEnemiesUI(int number)
     {
         lastingEnemiesText.text = string.Format(number.ToString()); 
+    }
+    public void UpdateWaveNumberUI (int number)
+    {
+        waveNumberText.text = string.Format("WAVE: " + number); 
     }
 
     void DamageCity(float damage)
