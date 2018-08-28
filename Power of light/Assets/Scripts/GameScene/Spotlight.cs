@@ -13,7 +13,8 @@ public class Spotlight : Tower {
     [SerializeField] GameObject pointLight;
     [SerializeField] Transform topOfTheTower;
     float timer = 0;
-    [SerializeField] bool debug = false; 
+    [SerializeField] bool debug = false;
+    [SerializeField] AudioSource powerSound;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class Spotlight : Tower {
         pointLight.SetActive(isPowered);
         if (isPowered || debug)
         {
+            powerSound.UnPause();
             isPowered = false;
             if (target == null) return;
             topOfTheTower.LookAt(target, Vector3.forward);
@@ -42,6 +44,10 @@ public class Spotlight : Tower {
                 timer = cooldown;
             }
             timer -= Time.deltaTime;
+        }
+        else
+        {
+            powerSound.Pause();
         }
     }
 
