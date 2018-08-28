@@ -1436,12 +1436,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ed8acd97848bd4390cf1b58dfc4860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBorderX: -57
-  rightBorderX: 75
+  leftBorderX: -42
+  rightBorderX: 42
   bottomBorderZ: -183
-  topBorderZ: -36.5
-  maxZoom: 25
-  minZoom: 50
+  topBorderZ: -37
+  maxZoom: 10
+  minZoom: 25
 --- !u!1 &558476997
 GameObject:
   m_ObjectHideFlags: 0
