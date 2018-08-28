@@ -733,7 +733,7 @@ MonoBehaviour:
   - {fileID: 1360138920304580, guid: 1496b502ca65e394fb536c54b6109741, type: 2}
   whereToPlace:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 4096
 --- !u!114 &142877767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 279759878}
   - component: {fileID: 279759877}
   - component: {fileID: 279759876}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

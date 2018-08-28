@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour {
 
     private void OnDestroy()
     {
-        GetComponentInParent<Wave>().LastingEnemies--; 
+        Wave wave = GetComponentInParent<Wave>(); 
+        if (wave != null )wave.LastingEnemies--; 
     }
 }
