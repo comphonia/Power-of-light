@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1751628528621460
 GameObject:
   m_ObjectHideFlags: 1
@@ -448,4 +448,4 @@ CapsuleCollider:
   m_Radius: 2.49
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 4.49, z: 0}
+  m_Center: {x: 0, y: 1.9, z: 0}
