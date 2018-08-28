@@ -24,7 +24,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float maxHealth;
     public float defaultSpeed;
     [HideInInspector] public float speed;
-    [SerializeField] int lootAmount; 
+    [SerializeField] int lootAmount;
+    [SerializeField] Transform deathParticle;
 
     Vector3 direction; 
     Transform target;
@@ -64,6 +65,8 @@ public class Enemy : MonoBehaviour {
     private void OnDestroy()
     {
         Wave wave = GetComponentInParent<Wave>(); 
-        if (wave != null )wave.LastingEnemies--; 
+        if (wave != null )wave.LastingEnemies--;
+        Instantiate(deathParticle, transform.position, transform.rotation);
+
     }
 }

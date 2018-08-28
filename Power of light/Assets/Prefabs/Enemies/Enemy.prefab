@@ -207,6 +207,8 @@ MonoBehaviour:
   defaultSpeed: 10
   speed: 3
   lootAmount: 3
+  deathParticle: {fileID: 4543393121943670, guid: 13c34f4444b767a418cc5c69aad3c85f,
+    type: 2}
 --- !u!136 &136253876276331710
 CapsuleCollider:
   m_ObjectHideFlags: 1
