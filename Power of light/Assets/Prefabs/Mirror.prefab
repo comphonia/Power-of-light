@@ -104,6 +104,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4357780890262172}
+  - component: {fileID: 114990263102067270}
+  - component: {fileID: 114898422400780284}
+  - component: {fileID: 136733773020710164}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -131,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1311791887861516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4343847301538930}
@@ -390,6 +393,38 @@ MonoBehaviour:
   reflectMat: {fileID: 2100000, guid: 6287c4b85d516ae4abb50ea37735b64f, type: 2}
   fadeMat: {fileID: 2100000, guid: 79b67ae26ad6df743b846473414ae2e3, type: 2}
   beamIntensity: 0
+--- !u!114 &114898422400780284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735813195812436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c034a5683039494092046f15a04abdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 10
+  sellAmount: 5
+--- !u!114 &114990263102067270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735813195812436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14318cdbb2c190f489ebd1247424e1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReflecting: 0
+  reflectVect: {x: 0, y: 0, z: 0}
+  hitPosition: {x: 0, y: 0, z: 0}
+  maxDistance: 0
+  spotLight: {fileID: 0}
+  reflectMat: {fileID: 0}
+  fadeMat: {fileID: 0}
+  beamIntensity: 0
 --- !u!120 &120719379499304896
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -482,3 +517,16 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!136 &136733773020710164
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735813195812436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.89
+  m_Height: 7.32
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.38, z: 0}
