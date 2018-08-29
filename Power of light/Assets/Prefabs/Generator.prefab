@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 114180530996094704}
   - component: {fileID: 120025452449469626}
   - component: {fileID: 82920782108398336}
+  - component: {fileID: 136590246639953328}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -170,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1009250460092234}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000010542572}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4748128607476172}
@@ -419,6 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066532d9fa193454c96b3c8493754be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 20
+  sellAmount: 15
   rayOrigin: {fileID: 4425551396395946}
   maxDistance: 50
   maxBounces: 5
@@ -519,3 +522,16 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!136 &136590246639953328
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360138920304580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.11
+  m_Height: 6.78
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.53, z: 0}
