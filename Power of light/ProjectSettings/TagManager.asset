@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Mirror
   - Tower
-  - Prism
   layers:
   - Default
   - TransparentFX
