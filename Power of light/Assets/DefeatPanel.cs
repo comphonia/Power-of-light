@@ -33,7 +33,8 @@ public class DefeatPanel : MonoBehaviour {
 
     void TryAgain ()
     {
-
+        WavesSpawner.instance.TryAgain();
+        GameMaster.instance.WaveEnded(); 
     }
 
     void OpenMenu()

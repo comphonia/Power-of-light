@@ -32,6 +32,8 @@ public class WavesSpawner : MonoBehaviour {
     GameObject wave;
     public static WavesSpawner instance;
 
+    int start_gold; 
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -43,7 +45,8 @@ public class WavesSpawner : MonoBehaviour {
     public void StartNewWave()
     {
         WaveInProgress = true;
-        wave = Instantiate(waves[waveNumber], transform); 
+        wave = Instantiate(waves[waveNumber], transform);
+        start_gold = GameMaster.instance.Gold;
     }
 
     public void WaveEnded()
@@ -56,5 +59,6 @@ public class WavesSpawner : MonoBehaviour {
     public void TryAgain()
     {
         Destroy(wave);
+        GameMaster.instance.Gold = start_gold; 
     }
 }
