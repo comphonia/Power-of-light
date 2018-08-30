@@ -834,7 +834,6 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &181340649
 Transform:
-<<<<<<< HEAD:Power of light/Assets/Scenes/Escape the merge.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -996,8 +995,6 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &195838886
 CanvasRenderer:
-=======
->>>>>>> parent of 0f9a67d... Merge branch 'master' of https://github.com/Looooord/Power-of-light:Power of light/Assets/Scenes/Lord's Realm.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1338,7 +1335,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37046afaa23c09746981fdc683fd0145, type: 2}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD:Power of light/Assets/Scenes/Escape the merge.unity
 --- !u!1 &455674987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,51 +1405,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 455674987}
   m_CullTransparentMesh: 0
 --- !u!1 &482874102
-=======
---- !u!1001 &373905451
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1368720071}
-    m_Modifications:
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904449684926430, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 444b30a24b8d91c4c8f5ba61352e0583, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1 &455674987
->>>>>>> parent of 0f9a67d... Merge branch 'master' of https://github.com/Looooord/Power-of-light:Power of light/Assets/Scenes/Lord's Realm.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4721,7 +4672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d95f76a341490b4c9c84115ce3fb9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Power of light/Assets/Scenes/Escape the merge.unity
 --- !u!1 &1708857601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4797,8 +4747,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708857601}
   m_CullTransparentMesh: 0
-=======
->>>>>>> parent of 0f9a67d... Merge branch 'master' of https://github.com/Looooord/Power-of-light:Power of light/Assets/Scenes/Lord's Realm.unity
 --- !u!1 &1725680998
 GameObject:
   m_ObjectHideFlags: 0
