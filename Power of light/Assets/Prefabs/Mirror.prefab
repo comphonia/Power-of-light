@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4343847301538930}
   - component: {fileID: 33029805814410326}
   - component: {fileID: 23793770397019782}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4781431579221624}
   - component: {fileID: 33308725991599150}
   - component: {fileID: 23866632591916956}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 64589795612514868}
   - component: {fileID: 114634547116337992}
   - component: {fileID: 120719379499304896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane (1)
   m_TagString: Mirror
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4125974093543342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MirrorModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4001648716699472}
   - component: {fileID: 108744738455315026}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 114990263102067270}
   - component: {fileID: 114898422400780284}
   - component: {fileID: 136733773020710164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,14 +5,17 @@ public class PlacementController : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectsPrefs;
     [SerializeField] LayerMask whereToPlace;
+    [SerializeField] float radius; 
 
     public static bool building = false;
-    static bool gratis = false; 
+    static bool gratis = false;
 
     static GameObject currentPlaceableObject;
 
     float mouseWheelRotation;
     int currentPrefabIndex = -1;
+
+    RaycastHit hitInfo; 
 
     private void Update()
     {
@@ -24,13 +27,13 @@ public class PlacementController : MonoBehaviour
             RotateFromMouseWheel();
             ReleaseIfClicked();
         }
-        else building = false; 
+        else building = false;
     }
 
-    public static void HandleObject (GameObject obj)
+    public static void HandleObject(GameObject obj)
     {
         currentPlaceableObject = obj;
-        gratis = true; 
+        gratis = true;
     }
 
     public void HandleNewObject(int number)
@@ -60,12 +63,14 @@ public class PlacementController : MonoBehaviour
     private void MoveCurrentObjectToMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, whereToPlace))
+        
+        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
         {
-            currentPlaceableObject.transform.position = hitInfo.point;
-            currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+            if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+            {
+                currentPlaceableObject.transform.position = hitInfo.point;
+                currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+            }
         }
     }
 
@@ -82,10 +87,16 @@ public class PlacementController : MonoBehaviour
         {
             Debug.Log("released");
             Structure structure = currentPlaceableObject.GetComponent<Structure>();
-            int cost = structure.cost; 
+            int cost = structure.cost;
             if (!gratis) GameMaster.instance.Gold -= cost;
-            gratis = false; 
+            gratis = false;
             currentPlaceableObject = null;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        if (hitInfo.collider != null) Gizmos.DrawSphere(hitInfo.point, radius); 
     }
 }
