@@ -26,7 +26,6 @@ public class ConstructionPanel : MonoBehaviour {
         if (spotlightCost < GameMaster.instance.Gold)
         {
             pc.HandleNewObject(0);
-            GameMaster.instance.Gold -= spotlightCost; 
         }
         else Debug.Log("It costs too much!"); 
     }
@@ -36,7 +35,6 @@ public class ConstructionPanel : MonoBehaviour {
         if (mirrorCost < GameMaster.instance.Gold)
         {
             pc.HandleNewObject(1);
-            GameMaster.instance.Gold -= mirrorCost;
         }
         else Debug.Log("It costs too much!");
     }
@@ -46,7 +44,6 @@ public class ConstructionPanel : MonoBehaviour {
         if (generatorCost < GameMaster.instance.Gold)
         {
             pc.HandleNewObject(2);
-            GameMaster.instance.Gold -= generatorCost;
         }
         else Debug.Log("It costs too much!");
     }

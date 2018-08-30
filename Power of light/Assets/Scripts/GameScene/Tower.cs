@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tower : MonoBehaviour {
+public abstract class Tower : Structure {
 
     protected float range;
     protected LayerMask whatToHit;

@@ -46,18 +46,20 @@ public class CameraController : MonoBehaviour {
 
     void ZoomCamera()
     {
-        if (camera.fieldOfView < maxZoom) camera.fieldOfView = maxZoom;
-        else if (camera.fieldOfView > minZoom) camera.fieldOfView = minZoom; 
+        if (PlacementController.building == false) {
+            if (camera.fieldOfView < maxZoom) camera.fieldOfView = maxZoom;
+            else if (camera.fieldOfView > minZoom) camera.fieldOfView = minZoom;
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        {
-            camera.fieldOfView--;
-            //transform.position += new Vector3(0, .6f, .2f);
-        }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        {
-            camera.fieldOfView++;
-            //transform.position -= new Vector3(0, .6f, .2f);
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                camera.fieldOfView--;
+                //transform.position += new Vector3(0, .6f, .2f);
+            }
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                camera.fieldOfView++;
+                //transform.position -= new Vector3(0, .6f, .2f);
+            }
         }
     }
 }
