@@ -3604,8 +3604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsPrefs:
   - {fileID: 1146029809395714, guid: 386704a6ba56f914db9ce1f61bf9c3ba, type: 2}
-  - {fileID: 1360138920304580, guid: 1496b502ca65e394fb536c54b6109741, type: 2}
   - {fileID: 1735813195812436, guid: 20481f105b4df98479f30be4f11c84bf, type: 2}
+  - {fileID: 1360138920304580, guid: 1496b502ca65e394fb536c54b6109741, type: 2}
   whereToPlace:
     serializedVersion: 2
     m_Bits: 4096
