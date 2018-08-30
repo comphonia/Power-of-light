@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cc6dc4427ed624885b045918bd245d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 5
   goldText: {fileID: 98288626}
   healthText: {fileID: 773973515}
   lastingEnemiesText: {fileID: 558477000}

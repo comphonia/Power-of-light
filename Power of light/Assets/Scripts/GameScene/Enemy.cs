@@ -64,7 +64,6 @@ public class Enemy : MonoBehaviour {
 
     private void OnDestroy()
     {
-<<<<<<< HEAD
         Wave wave = GetComponentInParent<Wave>();
         if (wave != null)
         {
@@ -72,11 +71,5 @@ public class Enemy : MonoBehaviour {
             GameObject dp = Instantiate(deathParticle, transform.position, transform.rotation).gameObject;
             Destroy(dp, 3f);
         }
-=======
-        Wave wave = GetComponentInParent<Wave>(); 
-        if (wave != null )wave.LastingEnemies--;
-        Instantiate(deathParticle, transform.position, transform.rotation);
-
->>>>>>> parent of ef26d1a... Merge branch 'master' of https://github.com/Looooord/Power-of-light
     }
 }
