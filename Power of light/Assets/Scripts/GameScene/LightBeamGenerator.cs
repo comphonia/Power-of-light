@@ -24,6 +24,8 @@ public class LightBeamGenerator : MonoBehaviour
 
     private Reflect reflect;
 
+    private Prism prism;
+
     private void Awake()
     {
         beamIntensity = maxBounces;
@@ -47,7 +49,18 @@ public class LightBeamGenerator : MonoBehaviour
                     reflect.beamIntensity = beamIntensity;
                     reflect.reflectVect = reflectVect;
                     reflect.hitPosition = hit.point;
-                    //reflect.ReflectBeam();
+                }
+                if (hit.collider.CompareTag("Prism"))
+                {
+                    Vector3 incomingVect = hit.point - rayOrigin.position;
+                    Vector3 beam1dir = (Quaternion.AngleAxis(-60, incomingVect)).eulerAngles;
+                    Vector3 beam2dir = (Quaternion.AngleAxis(60, incomingVect)).eulerAngles;
+                    prism = hit.collider.gameObject.GetComponent<Prism>();
+                    prism.isSplitting = true;
+                    prism.beamIntensity = beamIntensity;
+                    prism.beam1dir = beam1dir;
+                    prism.beam2dir = beam2dir;
+                    prism.hitPosition = hit.point;
                 }
                 if (hit.collider.CompareTag("Tower"))
                 {
