@@ -17,7 +17,7 @@ public class GameMaster : MonoBehaviour {
             if (health <= 0)
             {
                 health = 0;
-                defeatPanel.SetActive(true); 
+                BattleLost(); 
             }
         }
     }
@@ -40,8 +40,6 @@ public class GameMaster : MonoBehaviour {
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI lastingEnemiesText;
     [SerializeField] TextMeshProUGUI waveNumberText;
-
-    [SerializeField] GameObject defeatPanel; 
 
     private void Awake()
     {
@@ -77,5 +75,10 @@ public class GameMaster : MonoBehaviour {
     public void WaveEnded()
     {
         Health = maxHealth;
+    }
+
+    public void BattleLost()
+    {
+        //game over
     }
 }

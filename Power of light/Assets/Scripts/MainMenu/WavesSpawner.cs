@@ -2,7 +2,7 @@
 
 public class WavesSpawner : MonoBehaviour {
 
-    [SerializeField] GameObject[] waves;
+    static GameObject[] waves;
     int waveNumber;
     int WaveNumber
     {
@@ -29,36 +29,37 @@ public class WavesSpawner : MonoBehaviour {
             PlayWaveButton.instance.SetButton(waveInProgress); 
         }
     }
-    GameObject wave;
     public static WavesSpawner instance;
-
-    int start_gold; 
 
     private void Awake()
     {
         if (instance == null) instance = this;
         else this.enabled = false; 
+        waves = new GameObject[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            waves[i] = transform.GetChild(i).gameObject;
+            waves[i].SetActive(false);
+        }
 
         WaveNumber = 0; 
     }
 
     public void StartNewWave()
     {
-        WaveInProgress = true;
-        wave = Instantiate(waves[waveNumber], transform);
-        start_gold = GameMaster.instance.Gold;
+        WaveInProgress = true; 
+        waves[waveNumber].SetActive(true); 
+    }
+
+    public void StartWave()
+    {
+        waves[waveNumber].SetActive(true); 
     }
 
     public void WaveEnded()
     {
         WaveInProgress = false;
-        Destroy(wave); 
         WaveNumber++; 
     }
 
-    public void TryAgain()
-    {
-        Destroy(wave);
-        GameMaster.instance.Gold = start_gold; 
-    }
 }
