@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +23,7 @@ public class Spotlight : Tower {
         shotSound.Pause();
         powerSound.Pause();
         range = Range;
-        whatToHit = WhatToHit;
+        whatToHit = WhatToHit; 
     }
 
     private void Start()
@@ -32,10 +31,8 @@ public class Spotlight : Tower {
         InvokeRepeating("FindTarget", 0f, 0.5f);
     }
 
-    protected override void Update()
+    private void Update()
     {
-        base.Update(); 
-
         pointLight.SetActive(isPowered);
         if (isPowered || debug)
         {

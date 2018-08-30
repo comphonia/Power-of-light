@@ -4,12 +4,9 @@ using UnityEngine;
 public class PlacementController : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectsPrefs;
-    [SerializeField] LayerMask whereToPlace;
+    [SerializeField] LayerMask whereToPlace; 
 
-    public static bool building = false;
-    static bool gratis = false; 
-
-    static GameObject currentPlaceableObject;
+    GameObject currentPlaceableObject;
 
     float mouseWheelRotation;
     int currentPrefabIndex = -1;
@@ -18,19 +15,11 @@ public class PlacementController : MonoBehaviour
     {
         if (currentPlaceableObject != null)
         {
-            building = true;
-            if (Input.GetKeyDown(KeyCode.Escape)) Destroy(currentPlaceableObject);
+            if (Input.GetKeyDown(KeyCode.Escape)) Destroy(currentPlaceableObject); 
             MoveCurrentObjectToMouse();
             RotateFromMouseWheel();
             ReleaseIfClicked();
         }
-        else building = false; 
-    }
-
-    public static void HandleObject (GameObject obj)
-    {
-        currentPlaceableObject = obj;
-        gratis = true; 
     }
 
     public void HandleNewObject(int number)
@@ -80,11 +69,6 @@ public class PlacementController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("released");
-            Structure structure = currentPlaceableObject.GetComponent<Structure>();
-            int cost = structure.cost; 
-            if (!gratis) GameMaster.instance.Gold -= cost;
-            gratis = false; 
             currentPlaceableObject = null;
         }
     }

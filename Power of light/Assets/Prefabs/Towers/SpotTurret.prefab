@@ -617,8 +617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da2e2f5bed93a043a4234f71e72fa36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 30
-  sellAmount: 20
   Range: 30
   WhatToHit:
     serializedVersion: 2
