@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour {
     {
         Wave wave = GetComponentInParent<Wave>(); 
         if (wave != null )wave.LastingEnemies--;
-        Instantiate(deathParticle, transform.position, transform.rotation);
-
+        GameObject dp = Instantiate(deathParticle, transform.position, transform.rotation).gameObject;
+        Destroy(dp, 3f); 
     }
 }

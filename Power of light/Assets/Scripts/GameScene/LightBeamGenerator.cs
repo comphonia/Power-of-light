@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightBeamGenerator : MonoBehaviour
+public class LightBeamGenerator : Structure
 {
     public Transform rayOrigin;
 
@@ -32,8 +32,9 @@ public class LightBeamGenerator : MonoBehaviour
         lightBeam.enabled = false;
     }
 
-    void Update ()
+    protected override void Update ()
     {
+        base.Update(); 
         lightBeam.enabled = isPowered;
         if (isPowered)
         {
