@@ -61,3 +61,5 @@ MonoBehaviour:
     spawnDelay: 1
     delayToNextSubWave: 0
   delayWhenTheWaveStarts: 2
+  startSentence: Again... the alarm went off. Come on, turn it off! We are trying
+    to sleep!

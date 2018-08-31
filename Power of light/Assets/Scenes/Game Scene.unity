@@ -2986,6 +2986,7 @@ RectTransform:
   - {fileID: 1672227832}
   - {fileID: 1219116284}
   - {fileID: 1432058781}
+  - {fileID: 1737138302}
   m_Father: {fileID: 782647619}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6282,11 +6283,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945587072}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 56}
+  m_AnchoredPosition: {x: 0, y: 38}
   m_SizeDelta: {x: 725.8, y: 64.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616971321
@@ -9719,7 +9720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 613.4999, y: 109.999916}
+  m_AnchoredPosition: {x: 613.4999, y: 157.69989}
   m_SizeDelta: {x: 60, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &882624798
@@ -9928,11 +9929,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945587072}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -146}
+  m_AnchoredPosition: {x: -0.000061035156, y: -164}
   m_SizeDelta: {x: 725.8, y: 64.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892077661
@@ -10544,6 +10545,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000067, y: 1.0000067, z: 1.0000067}
   m_Children:
+  - {fileID: 976135172}
   - {fileID: 616971320}
   - {fileID: 1670926000}
   - {fileID: 892077660}
@@ -11060,12 +11062,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1830241522}
-  m_RootOrder: 5
+  m_Father: {fileID: 945587072}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -207.74225}
+  m_AnchoredPosition: {x: 0, y: 142}
   m_SizeDelta: {x: 725.8, y: 64.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &976135173
@@ -12669,7 +12671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: -80.7}
+  m_AnchoredPosition: {x: -90, y: -33.000015}
   m_SizeDelta: {x: 564.30005, y: 706.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1130737456
@@ -14433,7 +14435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 11}
   m_SizeDelta: {x: 792.3, y: 64.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222272362
@@ -21794,7 +21796,7 @@ RectTransform:
   m_Children:
   - {fileID: 1864697741}
   m_Father: {fileID: 945587072}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21965,6 +21967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1452029046}
   - component: {fileID: 1452029047}
+  - component: {fileID: 1452029048}
   m_Layer: 0
   m_Name: Start - Wave Spawner
   m_TagString: Untagged
@@ -22002,6 +22005,18 @@ MonoBehaviour:
   - {fileID: 1351064258618288, guid: 7e71408f565c22c42afba00a8ee9fd45, type: 2}
   arrowPref: {fileID: 1639056692443702, guid: 53972f28117952e4bb558711c002a50b, type: 2}
   spawnArrowsDelay: 0.5
+--- !u!114 &1452029048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452029045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33493e386c282a8499dc8cad6f198ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSentenceText: {fileID: 1737138303}
 --- !u!1 &1457577852
 GameObject:
   m_ObjectHideFlags: 0
@@ -22743,7 +22758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 752.2, y: 109.99993}
+  m_AnchoredPosition: {x: 752.2, y: 157.69992}
   m_SizeDelta: {x: 60, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1553755737
@@ -24948,11 +24963,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945587072}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -48}
+  m_AnchoredPosition: {x: -0.000061035156, y: -84}
   m_SizeDelta: {x: 725.8, y: 64.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670926001
@@ -25884,6 +25899,177 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1734995543}
   m_Mesh: {fileID: 4300094, guid: 43fb2eb6aa9eb0c47b695f06d66c63fb, type: 3}
+--- !u!1 &1737138301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737138302}
+  - component: {fileID: 1737138304}
+  - component: {fileID: 1737138303}
+  - component: {fileID: 1737138305}
+  m_Layer: 5
+  m_Name: startWaveSentence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1737138302
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737138301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 282833222}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 534, y: -329}
+  m_SizeDelta: {x: 519.8, y: 102.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1737138303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737138301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: They are coming, I can feel it
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278584978
+  m_fontColor: {r: 0.573, g: 0.024325462, b: 0.024325462, a: 1}
+  m_enableVertexGradient: 0
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 1737138303}
+    characterCount: 30
+    spriteCount: 0
+    spaceCount: 6
+    wordCount: 7
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1737138304
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737138301}
+  m_CullTransparentMesh: 0
+--- !u!111 &1737138305
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737138301}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7b18b7597fd581d4b92f84c172ded031, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7b18b7597fd581d4b92f84c172ded031, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1737914864
 GameObject:
   m_ObjectHideFlags: 0
@@ -26012,7 +26198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: -80.7}
+  m_AnchoredPosition: {x: -90, y: -33}
   m_SizeDelta: {x: 564.30005, y: 706.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738546657
@@ -26546,7 +26732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -80.69999}
+  m_AnchoredPosition: {x: 50, y: -33.000008}
   m_SizeDelta: {x: 564.30005, y: 706.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1781272013
@@ -27028,7 +27214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 613.4999, y: 109.999916}
+  m_AnchoredPosition: {x: 613.4999, y: 157.69989}
   m_SizeDelta: {x: 60, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825225858
@@ -27389,7 +27575,6 @@ RectTransform:
   - {fileID: 590035220}
   - {fileID: 1222272361}
   - {fileID: 2104103574}
-  - {fileID: 976135172}
   - {fileID: 1923299120}
   m_Father: {fileID: 1298514779}
   m_RootOrder: 0
@@ -29088,7 +29273,7 @@ RectTransform:
   m_Children:
   - {fileID: 1898485166}
   m_Father: {fileID: 1830241522}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30424,7 +30609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -93.74225}
+  m_AnchoredPosition: {x: 0, y: -126}
   m_SizeDelta: {x: 725.8, y: 64.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104103575
@@ -30446,9 +30631,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You need to build our defense! You can do that by using the sidebar on your
-    right! Once you built a structure you can select that by clicking on it, then
-    with the left click you can move it or sell it with the right click
+  m_text: 'You need to build our defense! You can do that by using the sidebar on
+    your right! You can rotate th structure with the scrollwheel!
+
+    Once you built a structure you can select that by clicking on it, then with the
+    left click you can move it or sell it with the right click'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -30493,7 +30680,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 125
+  m_firstOverflowCharacterIndex: 120
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -30516,12 +30703,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2104103575}
-    characterCount: 221
+    characterCount: 271
     spriteCount: 0
-    spaceCount: 45
-    wordCount: 46
+    spaceCount: 53
+    wordCount: 54
     linkCount: 0
-    lineCount: 4
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0

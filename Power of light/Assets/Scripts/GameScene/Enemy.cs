@@ -64,12 +64,15 @@ public class Enemy : MonoBehaviour {
 
     private void OnDestroy()
     {
-        Wave wave = GetComponentInParent<Wave>(); 
-        if (wave != null )wave.LastingEnemies--;
-        if (deathParticle != null)
+        Wave wave = GetComponentInParent<Wave>();
+        if (wave != null)
         {
-            GameObject dp = Instantiate(deathParticle, transform.position, transform.rotation).gameObject;
-            Destroy(dp, 3f);
+            wave.LastingEnemies--;
+            if (deathParticle != null)
+            {
+                GameObject dp = Instantiate(deathParticle, transform.position, transform.rotation).gameObject;
+                Destroy(dp, 3f);
+            }
         }
     }
 }

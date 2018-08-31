@@ -31,21 +31,31 @@ public class Wave : MonoBehaviour {
             if (lastingEnemies == 0) WaveEnded(); 
         }
     }
-    
+
+    WaveUI wUI; 
+    [SerializeField] string startSentence;
+
     /*[SerializeField] GameObject[] enemyTypes;
     [SerializeField] float[] probs;
     [SerializeField] float spawnDelay;
     [SerializeField] float numberOfEnemy; */
-    
 
-    private void OnEnable()
+    private void Awake()
     {
-        StartCoroutine(Spawning());
-        lastingEnemies = 0; 
-        foreach(SubWave sw in subWaves)
+        wUI = GetComponentInParent<WaveUI>();
+        lastingEnemies = 0;
+        foreach (SubWave sw in subWaves)
         {
             LastingEnemies += sw.numberOfEnemy;
         }
+    }
+
+    private void Start()
+    {
+
+        wUI.startSentenceText.text = startSentence;
+        wUI.startSentenceText.gameObject.SetActive(true); 
+        StartCoroutine(Spawning());
     }
 
     IEnumerator Spawning()
