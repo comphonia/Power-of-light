@@ -35,6 +35,7 @@ public class WavesSpawner : MonoBehaviour {
     [SerializeField] GameObject arrowPref; 
     [SerializeField] float spawnArrowsDelay = 0.5f;
     float timer = 0;
+    [SerializeField] GameObject victoryPanel; 
 
     private void Awake()
     {
@@ -71,6 +72,10 @@ public class WavesSpawner : MonoBehaviour {
         WaveInProgress = false;
         Destroy(wave);
         WaveNumber++; 
+        if (WaveNumber == 3)
+        {
+            victoryPanel.SetActive(true); 
+        }
     }
 
     public void BattleLost()
