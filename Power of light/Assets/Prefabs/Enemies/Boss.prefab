@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4097551484238068}
   - component: {fileID: 114722658268087476}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,8 +87,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1854345680704770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.339204, y: 0.0000004867133, z: -4.0828476}
-  m_LocalScale: {x: 0.45324764, y: 0.45324764, z: 0.45324764}
+  m_LocalPosition: {x: 2.339204, y: 1.33, z: -4.5352}
+  m_LocalScale: {x: 1.0818056, y: 1.0818056, z: 1.0818056}
   m_Children:
   - {fileID: 4193193034928940}
   m_Father: {fileID: 0}
@@ -203,10 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9000f1bc78ba6f45a5e1d8d2e2d8cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
-  defaultSpeed: 5
+  maxHealth: 50
+  defaultSpeed: 10
   speed: 3
-  lootAmount: 30
+  lootAmount: 3
   deathParticle: {fileID: 4543393121943670, guid: 13c34f4444b767a418cc5c69aad3c85f,
     type: 2}
 --- !u!136 &136253876276331710
