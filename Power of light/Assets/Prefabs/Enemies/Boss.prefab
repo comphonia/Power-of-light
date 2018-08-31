@@ -203,10 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9000f1bc78ba6f45a5e1d8d2e2d8cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
-  defaultSpeed: 10
+  maxHealth: 250
+  defaultSpeed: 1
   speed: 3
-  lootAmount: 3
+  lootAmount: 30
   deathParticle: {fileID: 4543393121943670, guid: 13c34f4444b767a418cc5c69aad3c85f,
     type: 2}
 --- !u!136 &136253876276331710

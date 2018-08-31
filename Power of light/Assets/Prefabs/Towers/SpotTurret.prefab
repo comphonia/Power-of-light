@@ -619,11 +619,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 30
   sellAmount: 20
-  Range: 30
+  Range: 10
   WhatToHit:
     serializedVersion: 2
     m_Bits: 512
-  radius: 10
+  radius: 3
   damage: 5
   cooldown: 0.5
   isPowered: 0
