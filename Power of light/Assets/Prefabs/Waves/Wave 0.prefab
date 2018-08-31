@@ -56,7 +56,7 @@ MonoBehaviour:
     numberOfEnemy: 5
     spawnDelay: 1
     delayToNextSubWave: 3
-  - enemy: {fileID: 1999982421953906, guid: a06f9956bad39ab43bdf3b5f864895ac, type: 2}
+  - enemy: {fileID: 1854345680704770, guid: f06a2d6be4817cc49a587e5a0da7cdc6, type: 2}
     numberOfEnemy: 3
     spawnDelay: 0.2
     delayToNextSubWave: 0
