@@ -17,7 +17,7 @@ public class WavesSpawner : MonoBehaviour {
         }
     }
     bool waveInProgress = false;
-    bool WaveInProgress
+    public bool WaveInProgress
     {
         get
         {
@@ -30,7 +30,11 @@ public class WavesSpawner : MonoBehaviour {
         }
     }
     public static WavesSpawner instance;
-    GameObject wave; 
+    GameObject wave;
+
+    [SerializeField] GameObject arrowPref; 
+    [SerializeField] float spawnArrowsDelay = 0.5f;
+    float timer = 0;
 
     private void Awake()
     {
@@ -41,6 +45,19 @@ public class WavesSpawner : MonoBehaviour {
     private void Start()
     {
         WaveNumber = 0;
+    }
+
+    private void Update()
+    {
+        if (!WaveInProgress)
+        {
+            if (timer <= 0)
+            {
+                Instantiate(arrowPref, transform.position, Quaternion.identity, transform);
+                timer = spawnArrowsDelay; 
+            }
+            timer -= Time.deltaTime; 
+        }
     }
 
     public void StartNewWave()
@@ -54,6 +71,12 @@ public class WavesSpawner : MonoBehaviour {
         WaveInProgress = false;
         Destroy(wave);
         WaveNumber++; 
+    }
+
+    public void BattleLost()
+    {
+        WaveInProgress = false;
+        Destroy(wave);
     }
 
 }

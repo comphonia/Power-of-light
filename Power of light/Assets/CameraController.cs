@@ -9,17 +9,38 @@ public class CameraController : MonoBehaviour {
 
     [SerializeField] float maxZoom = 25;
     [SerializeField] float minZoom = 50;
+    [SerializeField] float dragSpeed = 2;
+
+    bool dragging = false;
+    Vector3 oldPosition;
+    Vector3 panOriginPos; 
+    bool reverse = false; 
 
     new Camera camera;
 
     private void Awake()
     {
-        camera = GetComponent<Camera>(); 
+        camera = GetComponent<Camera>();
+        if (leftBorderX > rightBorderX)
+        {
+            reverse = true;
+            float swap = rightBorderX;
+            rightBorderX = leftBorderX;
+            leftBorderX = swap; 
+        }
+        if (bottomBorderZ > topBorderZ)
+        {
+            reverse = true;
+            float swap = bottomBorderZ;
+            bottomBorderZ = topBorderZ;
+            topBorderZ = swap; 
+        }
     }
 
     // Update is called once per frame
     void Update () {
         MoveCamera();
+        DragCamera(); 
         ZoomCamera(); 
     }
 
@@ -39,9 +60,36 @@ public class CameraController : MonoBehaviour {
 
         transform.position = new Vector3(xPos, transform.position.y, zPos);
 
-        float xDirection = Input.GetAxis("Horizontal");
-        float zDirection = Input.GetAxis("Vertical");
+        float direction = 1;
+        if (reverse) direction = -1;
+
+        float xDirection = direction*Input.GetAxis("Horizontal");
+        float zDirection = direction*Input.GetAxis("Vertical");
         transform.Translate(new Vector3(xDirection, 0, zDirection),Space.World ); 
+    }
+    
+    private void DragCamera()
+    {
+        if (Input.GetMouseButtonDown(2))
+        {
+            dragging = true;
+            oldPosition = transform.position;
+            panOriginPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);                    
+        }
+
+        if (Input.GetMouseButton(2))
+        {
+            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition) - panOriginPos;    
+            float xDiff = pos.x;
+            float zDiff = pos.y;
+            pos = new Vector3(xDiff, 0, zDiff); 
+            transform.position = oldPosition + pos * dragSpeed;                                         
+        }
+
+        if (Input.GetMouseButtonUp(2))
+        {
+            dragging = false;
+        }
     }
 
     void ZoomCamera()

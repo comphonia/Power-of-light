@@ -8,7 +8,7 @@ public class PlacementController : MonoBehaviour
     [SerializeField] float radius; 
 
     public static bool building = false;
-    static bool gratis = false;
+    static bool moving  = false;
 
     static GameObject currentPlaceableObject;
 
@@ -33,7 +33,7 @@ public class PlacementController : MonoBehaviour
     public static void HandleObject(GameObject obj)
     {
         currentPlaceableObject = obj;
-        gratis = true;
+        moving = true;
     }
 
     public void HandleNewObject(int number)
@@ -88,8 +88,8 @@ public class PlacementController : MonoBehaviour
             Debug.Log("released");
             Structure structure = currentPlaceableObject.GetComponent<Structure>();
             int cost = structure.cost;
-            if (!gratis) GameMaster.instance.Gold -= cost;
-            gratis = false;
+            if (!moving) GameMaster.instance.Gold -= cost;
+            moving = false;
             currentPlaceableObject = null;
         }
     }
