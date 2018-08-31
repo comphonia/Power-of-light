@@ -5,6 +5,7 @@ public class PlacementController : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectsPrefs;
     [SerializeField] LayerMask whereToPlace;
+    [SerializeField] LayerMask generatorPlacement;
     [SerializeField] float radius; 
 
     public static bool building = false;
@@ -66,11 +67,23 @@ public class PlacementController : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
         {
-            if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+            if (currentPrefabIndex == 2)
             {
-                currentPlaceableObject.transform.position = hitInfo.point;
-                currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("BaseArea"))
+                {
+                    currentPlaceableObject.transform.position = hitInfo.point;
+                    currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                }
             }
+            else
+            {
+                if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+                {
+                    currentPlaceableObject.transform.position = hitInfo.point;
+                    currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                }
+            }
+
         }
     }
 
