@@ -9,14 +9,25 @@ public class Structure : MonoBehaviour {
 
     bool mouseIsOver = false; 
     bool isSelected = false;
+    bool IsSelected { get
+        {
+            return isSelected;
+        }
+        set
+        {
+            isSelected = value;
+            visualChangeIfSelected.SetActive(isSelected); 
+        }
+    }
+    [SerializeField] GameObject visualChangeIfSelected;
 
     protected virtual void Update()
     {
-        if(isSelected && !mouseIsOver)
+        if(IsSelected && !mouseIsOver)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                isSelected = false;
+                IsSelected = false;
                 Debug.Log("is selected no more"); 
             }
         }
@@ -34,19 +45,19 @@ public class Structure : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0) && !isSelected)
+        if (Input.GetMouseButtonDown(0) && !IsSelected)
         {
-            Debug.Log("selected"); 
-            isSelected = true;
+            Debug.Log("selected");
+            IsSelected = true;
             return; 
         }
-        else if (isSelected && Input.GetMouseButtonDown(0))
+        else if (IsSelected && Input.GetMouseButtonDown(0))
         {
             Debug.Log("handled");
-            isSelected = false; 
+            IsSelected = false; 
             StartCoroutine(Move(true)); 
         }
-        else if (isSelected && Input.GetMouseButtonDown(1))
+        else if (IsSelected && Input.GetMouseButtonDown(1))
         {
             Debug.Log("sell");
             Sell(); 
