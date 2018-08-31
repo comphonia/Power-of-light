@@ -1,8 +1,9 @@
 ﻿using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour
+{
 
     [SerializeField] Button playButton;
     [SerializeField] Button optionsButton;
@@ -10,42 +11,49 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] Button quitButton;
 
     [SerializeField] string sceneToLoadOnPlay = "GameScene";
+
+    [SerializeField] GameObject menu;
+    [SerializeField] GameObject credits;
     public static MainMenu instance;
 
     private void Awake()
     {
         if (instance == null) instance = this;
-        else this.enabled = false; 
+        else this.enabled = false;
 
         playButton.onClick.AddListener(delegate { PlayButtonTask(); });
-        optionsButton.onClick.AddListener(delegate { OptionsButtonTask(); });
+        // optionsButton.onClick.AddListener(delegate { OptionsButtonTask(); });
         creditsButton.onClick.AddListener(delegate { CreditsButtonTask(); });
         quitButton.onClick.AddListener(delegate { QuitButtonTask(); });
     }
 
     void PlayButtonTask()
     {
-        SceneManager.LoadScene(sceneToLoadOnPlay); 
+        SceneManager.LoadScene(sceneToLoadOnPlay);
     }
 
     void OptionsButtonTask()
     {
-        Active(false); 
+        Active(false);
     }
 
-    void CreditsButtonTask()
+    bool cs = false;
+    public void CreditsButtonTask()
     {
-        Active(false);
+        menu.SetActive(cs);
+        cs = !cs;
+        credits.SetActive(cs);
+        print("clicked");
     }
 
     void QuitButtonTask()
     {
         Debug.Log("QUIT");
-        Application.Quit(); 
+        Application.Quit();
     }
 
-    void Active (bool value)
+    void Active(bool value)
     {
-        gameObject.SetActive(value); 
+        gameObject.SetActive(value);
     }
 }
