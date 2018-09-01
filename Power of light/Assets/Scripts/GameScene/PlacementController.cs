@@ -6,17 +6,17 @@ public class PlacementController : MonoBehaviour
     [SerializeField] private GameObject[] objectsPrefs;
     [SerializeField] LayerMask whereToPlace;
     [SerializeField] LayerMask generatorPlacement;
-    [SerializeField] float radius; 
+    [SerializeField] float radius;
 
     public static bool building = false;
-    static bool moving  = false;
+    static bool moving = false;
 
     static GameObject currentPlaceableObject;
 
     float mouseWheelRotation;
     int currentPrefabIndex = -1;
 
-    RaycastHit hitInfo; 
+    RaycastHit hitInfo;
 
     private void Update()
     {
@@ -64,7 +64,7 @@ public class PlacementController : MonoBehaviour
     private void MoveCurrentObjectToMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
+
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
         {
             if (currentPlaceableObject.tag == "Generator")
@@ -72,7 +72,7 @@ public class PlacementController : MonoBehaviour
                 if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("BaseArea"))
                 {
                     currentPlaceableObject.transform.position = hitInfo.point;
-                    currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                    //    currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
                 }
             }
             else
@@ -80,7 +80,7 @@ public class PlacementController : MonoBehaviour
                 if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
                 {
                     currentPlaceableObject.transform.position = hitInfo.point;
-                    currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                    //   currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
                 }
             }
 
@@ -110,6 +110,6 @@ public class PlacementController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        if (hitInfo.collider != null) Gizmos.DrawSphere(hitInfo.point, radius); 
+        if (hitInfo.collider != null) Gizmos.DrawSphere(hitInfo.point, radius);
     }
 }
