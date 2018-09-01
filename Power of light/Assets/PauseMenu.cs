@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour {
 
     void Resume()
     {
-        gameObject.SetActive(false); 
+        PauseMenuController.instance.Close(); 
     }
 
     void Menu()

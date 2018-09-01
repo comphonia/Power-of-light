@@ -62,7 +62,7 @@ MonoBehaviour:
     spawnDelay: 0.5
     delayToNextSubWave: 0
   delayWhenTheWaveStarts: 2
-  startSentence: They are coming! I can feel it, mostly beacause the alarm just went
+  startSentence: They are coming! I can feel it, mostly because the alarm just went
     off.
 --- !u!114 &114261529261626850
 MonoBehaviour:
