@@ -67,7 +67,7 @@ public class PlacementController : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
         {
-            if (currentPrefabIndex == 2)
+            if (currentPlaceableObject.tag == "Generator")
             {
                 if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("BaseArea"))
                 {
