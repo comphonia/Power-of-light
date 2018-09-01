@@ -22,4 +22,9 @@ public class PauseMenuController : MonoBehaviour {
             pauseMenuIsClosed = false; 
         }
     }
+
+    public void Close ()
+    {
+        pauseMenuPanel.SetActive(false); 
+    }
 }
